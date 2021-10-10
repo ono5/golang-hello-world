@@ -1,3 +1,4 @@
-.PHONY run
+.PHONY: run
 
 run:
+	go run *.go
