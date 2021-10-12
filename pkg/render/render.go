@@ -3,6 +3,7 @@ package render
 import (
 	"bytes"
 	"fmt"
+	"hello-world/models"
 	"hello-world/pkg/config"
 	"log"
 	"net/http"
@@ -20,7 +21,7 @@ func NewTemplaates(a *config.AppConfig) {
 }
 
 // RenderTemplate renders templates using html
-func RenderTemplate(w http.ResponseWriter, tmpl string) {
+func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData) {
 	var tc map[string]*template.Template
 
 	if app.UseCache {
